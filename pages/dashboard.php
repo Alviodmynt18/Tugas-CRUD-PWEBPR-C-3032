@@ -48,18 +48,18 @@
             </div>
             <!-- Table Data -->
             <div class="container" style="display:flex; flex-direction:column;">
-                <h1 class="h1 text-center fw-bold p-3 mt-5">PLAYLIST LAGU</h1>
+                <h1 class="h1 text-center fw-bold p-3 mt-5">PLAYLIST MUSIC</h1>
                 <table>
                     <tr>
                         <td>
                             <form autocomplete="off" onsubmit="onFormSubmit()">
                                 <div class="form-group fw-bold fs-4">
-                                    <label for="IdLagu">Masukan ID</label>
-                                    <input type="text" name="IdLagu" id="IdLagu">
+                                    <label for="IdMusic">ID Music</label>
+                                    <input type="text" name="IdMusic" id="IdMusic">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
-                                    <label for="NamaLagu">Nama Lagu</label>
-                                    <input type="text" name="NamaLagu" id="NamaLagu">
+                                    <label for="JudulMusic">Judul Music</label>
+                                    <input type="text" name="JudulMusic" id="JudulMusic">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
                                     <label for="Singer">Nama Penyanyi</label>
@@ -70,8 +70,8 @@
                                     <input type="text" name="Deskripsi" id="Deskripsi">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
-                                    <label for="LinkLagu">Link Lagu</label>
-                                    <input type="text" name="LinkLagu" id="LinkLagu">
+                                    <label for="LinkMusic">Link Music</label>
+                                    <input type="text" name="LinkMusic" id="LinkMusic">
                                 </div>
             
                                 <div class="form_action--button text-left">
@@ -83,19 +83,17 @@
                                 <table class="list" id="storeList">
                                     <thead>
                                         <tr>
-                                            <th>Masukan ID</th>
-                                            <th>Nama Lagu</th>
+                                            <th>ID Music</th>
+                                            <th>Judul Music</th>
                                             <th>Nama Penyanyi</th>
                                             <th>Deskripsi</th>
-                                            <th>Link Lagu</th>
+                                            <th>Link Music</th>
                                             <th>Owner</th>
                                             <th>No Hp</th>
-
 
                                         </tr>
                                     </thead>
                                     <tbody>
-            
                                     </tbody>
                                 </table>
                             </td>
