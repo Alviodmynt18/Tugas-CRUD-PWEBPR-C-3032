@@ -10,7 +10,7 @@
     <div class="container">
         <div class="form-container" id ="login-container">
             <h2>Login</h2>
-            <form id="login-form">
+            <form id="login-form" action='pages/dashboard.php'>
                 <div class="form-group">
                     <label for="login-username">Username:</label>
                     <input type="text" id="login-username" name="username" required>
@@ -21,28 +21,11 @@
                 </div>
                 <button type="submit">Login</button>
             </form>
-            <button id="register-button">Ganti Ke Register</button>
-        </div>
-        <div class="form-container" id ="register-container">
-            <h2>Registrasi</h2>
-            <form id="register-form" style="display: none;">
-                <div class="form-group">
-                    <label for="reg-username">Username:</label>
-                    <input type="text" id="reg-username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="reg-password">Password:</label>
-                    <input type="password" id="reg-password" name="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="reg-phone">No Hp:</label>
-                    <input type="text" id="reg-phone" name="phone" required>
-                </div>
-                <button type="submit">Register</button>
-            </form>
-            <button id="login-button">Ganti Ke Login</button>
+            <a href="register.php">
+                <button id="register-button">Ganti Ke Register</button>
+            </a>
         </div>
     </div>
-    <script src="js/login.js"></script>
+    <!-- <script src="js/login.js"></script> -->
 </body>
 </html>

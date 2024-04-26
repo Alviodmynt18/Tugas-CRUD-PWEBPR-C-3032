@@ -48,7 +48,7 @@ document
       // Simpan informasi login ke session storage
       sessionStorage.setItem("loggedInUser", JSON.stringify(foundUser));
       // Redirect ke halaman menu
-      window.location.href = "../MusicPlaylist/pages/dashboard.php";
+      window.location.href = "/pages/dashboard.php";
     } else {
       alert("Invalid username or password.");
     }

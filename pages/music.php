@@ -22,6 +22,26 @@ class music{
         }
         return $rows;
     }
+    static function detail($Id_music, $row_number = null) {
+        global $koneksi;
+        $sql = mysqli_query($koneksi, "select * from musicplaylist where ID_music='".$Id_music."'");
+        $rows = array();
+
+        if (mysqli_num_rows($sql) > 0) {
+            $count = 0;
+            while ($musicdata = mysqli_fetch_array($sql)) {
+                $count++;
+                if ($row_number !== null && $count != $row_number) {
+                    continue; 
+                }
+                $rows[] = $musicdata;
+                if ($row_number !== null) {
+                    break; 
+                }
+            }
+        }
+        return $rows;
+    }
 
 
     static function insert($Id_music, $Judul_music, $Nama_penyanyi, $Deskripsi, $Link_music){
@@ -46,6 +66,8 @@ class music{
         mysqli_stmt_bind_param($stmt, 'sssss', $Judul_music, $Nama_penyanyi, $Deskripsi, $Link_music, $Id_music);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
+
+        return "ok";
     }
 
     static function delete($Id_music) {
@@ -59,6 +81,5 @@ class music{
         return $success; 
     }
 }
-
 
 ?>

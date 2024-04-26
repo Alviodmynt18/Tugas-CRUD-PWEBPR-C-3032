@@ -5,8 +5,8 @@ $update = music::update($_POST["ID_music"], $_POST["Judul_music"],$_POST["Nama_p
 
 
 if ($update) {
-    header("Location: http://localhost/MusicPlaylist/config/");
+    header("Location: http://localhost/TUGAS-CRUD-PWEBPR-C-3032/pages/dashboard.php");
 } else{
-    header("Location: http://localhost/MusicPlaylist/config/");
+    echo "Gagal mengupdate data";;
 }
 ?>

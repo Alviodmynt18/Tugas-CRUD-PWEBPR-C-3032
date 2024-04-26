@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #feefd2;
+}
+
+label {
+  color: #feefd2;
+}
+
+table {
+    width: 90%;
+    margin: 40px auto;
+    background: #855771;
+    border-radius: 0px;
+    padding: 30px;
+    text-align: center;
+}
+
+table.list {
+    width: 80%;
+    margin: 40px auto;
+    background: #855771;
+    border-radius: 0px;
+    padding: 30px;
+    text-align: center;
+}
+th {
+    text-align: center;
+    padding: 20px 15px;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+td {
+    text-align: center;
+    padding: 20px 15px;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+#storeList {
+    width: 90%; 
+    border-collapse: collapse; 
+}
+
+#storeList th, #storeList td {
+    border: 4px solid #ad7d89; 
+    padding: 5px; 
+    text-align: center; 
+}
+
+#storeList th {
+    background-color: #feefd2; 
+    color: black; 
+}
+
+.btn-update{
+    background-color: #FFFF00;
+    color: #000000;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+.btn-delete{
+    background-color: #FF0000;
+    color: #000000;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.insert-data {
+    margin-bottom: -20px; 
+    margin-top: -10px;
+    margin-left: 50px;
+}
+
+.insert-data .btn {
+    background-color: #28a745; 
+    color: #FFFFFF; 
+    padding: 10px 25px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    transition: background-color 0.3s; 
+    border: none;
+    font-size: 14px;
+}
+
+.insert-data .btn:hover {
+    background-color: #218838; 
+}
