@@ -1,5 +1,5 @@
 <?php
-include "../pages/music.php";
+include "../model/music.php";
 $musicdata = music::detail($_GET['Id']);
 ?>
 <!DOCTYPE html>
@@ -12,10 +12,53 @@ $musicdata = music::detail($_GET['Id']);
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Tugas-CRUD-PWEBPR-C-3032/css/pageinsert.css">
-    <link rel="stylesheet" href="/Tugas-CRUD-PWEBPR-C-3032/css/sidebar.css">
+    <link rel="stylesheet" href="../views/css/pageupdate.css">
+    <link rel="stylesheet" href="../views/css/sidebar.css">
 
     <script src="../js/script.js" defer></script>
+    <script>
+      function validateForm() {
+        var ID_music = document.getElementById("ID_music").value;
+        var Judul_music = document.getElementById("Judul_music").value;
+        var Gambar_album = document.getElementById("Gambar_album").value;
+        var Nama_penyanyi = document.getElementById("Nama_penyanyi").value;
+        var Deskripsi = document.getElementById("Deskripsi").value;
+        var Link_music = document.getElementById("Link_music").value;
+
+        // Validasi panjang input di sini
+        if (ID_music.length > 5) {
+          alert("Input Id music exceeds the maximum limit of 5 characters");
+          return false;
+        }
+        if (Judul_music.length > 20) {
+          alert("Input Judul music exceeds the maximum limit of 20 characters");
+          return false;
+        }
+        if (Gambar_album.length > 100) {
+          alert("Input Gambar album exceeds the maximum limit of 20 characters");
+          return false;
+        }
+        if (Nama_penyanyi.length > 12) {
+          alert("Input Nama penyanyi exceeds the maximum limit of 12 characters");
+          return false;
+        }
+        if (Deskripsi.length > 50) {
+          alert("Input Deskripsi exceeds the maximum limit of 50 characters");
+          return false;
+        }
+        if (Link_music.length > 200) {
+          alert("Input Link music exceeds the maximum limit of 200 characters");
+          return false;
+        }
+
+        // Lakukan pemeriksaan validitas input di sini
+        if (ID_music.trim() === '' || Judul_music.trim() === '' || Gambar_album.trim() === '' || Nama_penyanyi.trim() === '' || Deskripsi.trim() === '' || Link_music.trim() === '') {
+          alert("Please fill in all fields.");
+          return false;
+        }
+        return true;
+      }
+  </script>
 </head>
 <body>
     <div class="wrapper">
@@ -40,7 +83,7 @@ $musicdata = music::detail($_GET['Id']);
                     </a>
                 </li>
                 <li>
-                    <a href="../index.php" class="logout" style="text-decoration:none;">
+                    <a href="index.php" class="logout" style="text-decoration:none;">
                         <span class="iconn"><i class="fas fa-sign-out-alt"></i></span>
                         <span class="item">Log out</span>
                     </a>
@@ -62,7 +105,7 @@ $musicdata = music::detail($_GET['Id']);
                 <table>
                     <tr>
                         <td>
-                            <form action = "update.php" method="post">
+                            <form action = "/updateplaylistmusic" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
                                 <div class="form-group fw-bold fs-4">
                                     <label for="IdMusic">ID Music</label><br>
                                     <input type="text" name="ID_music" id="ID_music" value="<?= $musicdata[0]["ID_music"]; ?>">
@@ -70,6 +113,12 @@ $musicdata = music::detail($_GET['Id']);
                                 <div class="form-group fw-bold fs-4">
                                     <label for="JudulMusic">Judul Music</label>
                                     <input type="text" name="Judul_music" id="Judul_music" value="<?= $musicdata[0]["Judul_music"]; ?>">
+                                </div>
+                                <div class="form-group fw-bold fs-4">
+                                    <label for="gambar">Gambar Album</label>
+                                </div>
+                                <div class="form-group fw-bold fs-4">
+                                    <input type="file" name="Gambar_album" id="Gambar_album" accept="image/jpg, image/jpeg, image/png" value="<?= $musicdata[0]["Gambar_album"]; ?>">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
                                     <label for="Singer">Nama Penyanyi</label>

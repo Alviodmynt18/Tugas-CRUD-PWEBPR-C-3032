@@ -1,5 +1,5 @@
 <?php
-include "database.php";
+include "../config/database.php";
 
 class music{
     static function select($row_number = null) {
@@ -43,12 +43,11 @@ class music{
         return $rows;
     }
 
-
-    static function insert($Id_music, $Judul_music, $Nama_penyanyi, $Deskripsi, $Link_music){
+    static function insert($Id_music, $Judul_music, $Gambar_album, $Nama_penyanyi, $Deskripsi, $Link_music){
         global $koneksi;
-        $sql = "INSERT INTO musicplaylist(Id_music, Judul_music, Nama_penyanyi, Deskripsi, Link_music) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO musicplaylist(Id_music, Judul_music, Gambar_album, Nama_penyanyi, Deskripsi, Link_music) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($koneksi, $sql);
-        mysqli_stmt_bind_param($stmt, 'sssss', $Id_music, $Judul_music, $Nama_penyanyi, $Deskripsi, $Link_music);
+        mysqli_stmt_bind_param($stmt, 'ssssss', $Id_music, $Judul_music, $Gambar_album, $Nama_penyanyi, $Deskripsi, $Link_music);
         mysqli_stmt_execute($stmt);
         
         $hasil = $Id_music;
@@ -56,14 +55,13 @@ class music{
         mysqli_stmt_close($stmt);
         
         return $hasil;
-    }
+    }    
 
-
-    static function update($Id_music, $Judul_music, $Nama_penyanyi, $Deskripsi, $Link_music) {
+    static function update($Id_music, $Judul_music, $Gambar_album, $Nama_penyanyi, $Deskripsi, $Link_music) {
         global $koneksi;
-        $sql = "UPDATE musicplaylist SET Judul_music=?, Nama_penyanyi=?, Deskripsi=?, Link_music=? WHERE Id_music=?";
+        $sql = "UPDATE musicplaylist SET Judul_music=?, Gambar_album=?, Nama_penyanyi=?, Deskripsi=?, Link_music=? WHERE Id_music=?";
         $stmt = mysqli_prepare($koneksi, $sql);
-        mysqli_stmt_bind_param($stmt, 'sssss', $Judul_music, $Nama_penyanyi, $Deskripsi, $Link_music, $Id_music);
+        mysqli_stmt_bind_param($stmt, 'ssssss', $Judul_music, $Gambar_album, $Nama_penyanyi, $Deskripsi, $Link_music, $Id_music);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
