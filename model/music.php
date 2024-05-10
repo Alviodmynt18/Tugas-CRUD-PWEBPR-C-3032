@@ -1,5 +1,5 @@
 <?php
-include "../config/database.php";
+include "config/database.php";
 
 class music{
     static function select($row_number = null) {
@@ -63,9 +63,14 @@ class music{
         $stmt = mysqli_prepare($koneksi, $sql);
         mysqli_stmt_bind_param($stmt, 'ssssss', $Judul_music, $Gambar_album, $Nama_penyanyi, $Deskripsi, $Link_music, $Id_music);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
 
-        return "ok";
+        $hasil = $Id_music;
+        
+        mysqli_stmt_close($stmt);
+        
+        return $hasil;
+
+        //return "ok";
     }
 
     static function delete($Id_music) {

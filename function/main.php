@@ -1,5 +1,4 @@
 <?php 
-
 include_once 'controllers/controller.php';
 require_once 'route/route.php';
 
@@ -10,7 +9,7 @@ $httpMethod = $_SERVER['REQUEST_METHOD'];
 $route = $_SERVER['REQUEST_URI'];
 
 // Basis URL
-$baseUrl = '/playlist';
+$baseUrl = '/TUGAS-CRUD-PWEBPR-C-3032';
 
 // Variabel untuk menyimpan parameter rute
 $params = [];

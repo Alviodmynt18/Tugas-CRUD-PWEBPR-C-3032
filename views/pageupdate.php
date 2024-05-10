@@ -1,7 +1,3 @@
-<?php
-include "../model/music.php";
-$musicdata = music::detail($_GET['Id']);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,19 +67,19 @@ $musicdata = music::detail($_GET['Id']);
             </div>
             <ul style="padding-left:0;">
                 <li>
-                    <a href="dashboard.php" class="dashboard" style="text-decoration:none;">
+                    <a href="dashboard" class="dashboard" style="text-decoration:none;">
                         <span class="icon"><i class="fas fa-desktop"></i></span>
                         <span class="item">My Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pageinsert.php" class="insert" style="text-decoration:none;">
+                    <a href="pageinsert" class="insert" style="text-decoration:none;">
                         <span class="icon"><i class="fa-regular fa-pen-to-square"></i></span>
                         <span class="item">Insert Playlist</span>
                     </a>
                 </li>
                 <li>
-                    <a href="index.php" class="logout" style="text-decoration:none;">
+                    <a href="index" class="logout" style="text-decoration:none;">
                         <span class="iconn"><i class="fas fa-sign-out-alt"></i></span>
                         <span class="item">Log out</span>
                     </a>
@@ -105,32 +101,32 @@ $musicdata = music::detail($_GET['Id']);
                 <table>
                     <tr>
                         <td>
-                            <form action = "/updateplaylistmusic" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+                            <form action = "/TUGAS-CRUD-PWEBPR-C-3032/update" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
                                 <div class="form-group fw-bold fs-4">
                                     <label for="IdMusic">ID Music</label><br>
-                                    <input type="text" name="ID_music" id="ID_music" value="<?= $musicdata[0]["ID_music"]; ?>">
+                                    <input type="text" name="ID_music" id="ID_music" value="<?= $data[0]["ID_music"]; ?>">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
                                     <label for="JudulMusic">Judul Music</label>
-                                    <input type="text" name="Judul_music" id="Judul_music" value="<?= $musicdata[0]["Judul_music"]; ?>">
+                                    <input type="text" name="Judul_music" id="Judul_music" value="<?= $data[0]["Judul_music"]; ?>">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
                                     <label for="gambar">Gambar Album</label>
                                 </div>
                                 <div class="form-group fw-bold fs-4">
-                                    <input type="file" name="Gambar_album" id="Gambar_album" accept="image/jpg, image/jpeg, image/png" value="<?= $musicdata[0]["Gambar_album"]; ?>">
+                                    <input type="file" name="Gambar_album" id="Gambar_album" accept="image/jpg, image/jpeg, image/png" value="<?= $data[0]["Gambar_album"]; ?>">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
                                     <label for="Singer">Nama Penyanyi</label>
-                                    <input type="text" name="Nama_penyanyi" id="Nama_penyanyi" value="<?= $musicdata[0]["Nama_penyanyi"]; ?>">
+                                    <input type="text" name="Nama_penyanyi" id="Nama_penyanyi" value="<?= $data[0]["Nama_penyanyi"]; ?>">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
                                     <label for="Deskripsi">Deskripsi</label><br>
-                                    <input type="text" name="Deskripsi" id="Deskripsi" value="<?= $musicdata[0]["Deskripsi"]; ?>">
+                                    <input type="text" name="Deskripsi" id="Deskripsi" value="<?= $data[0]["Deskripsi"]; ?>">
                                 </div>
                                 <div class="form-group fw-bold fs-4">
                                     <label for="LinkMusic">Link Music</label>
-                                    <input type="text" name="Link_music" id="Link_music" value="<?= $musicdata[0]["Link_music"]; ?>">
+                                    <input type="text" name="Link_music" id="Link_music" value="<?= $data[0]["Link_music"]; ?>">
                                 </div>
                                 <div class="form_action--button text-left">
                                     <button type="submit" class="btn-success fs-5 p-3 rounded">Submit</button>

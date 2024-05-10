@@ -1,6 +1,6 @@
 RewriteEngine On
-RewriteBase /music/
+RewriteBase /TUGAS-CRUD-PWEBPR-C-3032/
 RewriteRule ^index\\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /music/index.php [L]
+RewriteRule . /TUGAS-CRUD-PWEBPR-C-3032/index.php [L]
