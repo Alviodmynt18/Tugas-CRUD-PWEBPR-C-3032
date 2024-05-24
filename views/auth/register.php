@@ -13,15 +13,15 @@
             <form id="register-form" action='/TUGAS-CRUD-PWEBPR-C-3032/dashboard' method="post">
                 <div class="form-group">
                     <label for="reg-username">Username:</label>
-                    <input type="text" id="reg-username" name="username">
+                    <input type="text" id="reg-username" name="username" required>
                 </div>
                 <div class="form-group">
                     <label for="reg-nama_lengkap">Nama Lengkap:</label>
-                    <input type="text" id="reg-nama_lengkap" name="nama_lengkap">
+                    <input type="text" id="reg-nama_lengkap" name="nama_lengkap" required>
                 </div>
                 <div class="form-group">
                     <label for="reg-password">Password:</label>
-                    <input type="password" id="reg-password" name="password">
+                    <input type="password" id="reg-password" name="password" required>
                 </div>
                 <button type="submit">Register</button>
             </form>

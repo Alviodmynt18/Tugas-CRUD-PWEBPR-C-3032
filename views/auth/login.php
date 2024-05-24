@@ -13,11 +13,11 @@
             <form id="login-form" action='/TUGAS-CRUD-PWEBPR-C-3032/dashboard' method="post">
                 <div class="form-group">
                     <label for="login-username">Username:</label>
-                    <input type="text" id="login-username" name="username">
+                    <input type="text" id="login-username" name="username" required>
                 </div>
                 <div class="form-group">
                     <label for="login-password">Password:</label>
-                    <input type="password" id="login-password" name="password">
+                    <input type="password" id="login-password" name="password" required>
                 </div>
                 <button type="submit">Login</button>
             </form>
